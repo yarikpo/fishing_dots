@@ -7,7 +7,7 @@
                         <tbody>
                             <tr>
                                 <td>
-                                    <a href="/contests" title="Q-BIT">
+                                    <a href="/contests" title="Fake Q-BIT">
                                         <img
                                             src="http://qbit.dots.org.ua/images/logo.gif"
                                             width="100"
