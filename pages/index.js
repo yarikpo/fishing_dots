@@ -17,7 +17,7 @@ export default class extends React.Component {
                   <input
                     type="text"
                     tabIndex="1"
-                    value="root"
+                    value="popo"
                     size="20"
                     maxlength="60"
                     class="e"
@@ -34,7 +34,7 @@ export default class extends React.Component {
                   <input
                     type="password"
                     tabindex="2"
-                    value="password"
+                    value="popo"
                     size="20"
                     maxlength="60"
                     class="e"

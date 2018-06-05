@@ -1,11 +1,40 @@
-import ContestInfo from '../components/ContestInfo.js'
+import ContestInfo from "../components/ContestInfo.js"
+
+
 
 export default class extends React.Component {
+  state = {
+    contests: null,
+  }
   static async getInitialProps() {
     return { user: { username: "root" } }
   }
 
+
+
+  ComponentDidMount() {
+    fetch("http://dots-practice-2018.xeon.prostoksi.com/contests-json", {
+      headers: { 'Cookie': "DSID=WzETbgEkzCkXOX1H" }
+    })
+      .then(data => data.json())
+      .then(contests => this.setState({ contests: contests }))
+  }
+
   render() {
+    if (this.state.contests === null) {
+      return <div>Идет загрузка турниров...</div>
+    }
+    
+    const contestComponents = this.state.contests.map(contest => (
+      <ContestInfo
+        name={contest.title}
+        type={contest.type}
+        date_of_start={contest.start_time}
+        teacher_name={contest.teacher_name}
+        going={contest.status}
+        registered={contest.registration_type}
+      />
+    ))
     return (
       <>
         <h1>ТУРНИРЫ</h1>
@@ -17,7 +46,14 @@ export default class extends React.Component {
                 <form id="searchform" class="i" action="contests" method="get">
                   <label>
                     {`Поиск по названию: `}
-                    <input type="text" class="e" name="search" value="" size="20" maxlength="60" />
+                    <input
+                      type="text"
+                      class="e"
+                      name="search"
+                      value=""
+                      size="20"
+                      maxlength="60"
+                    />
                   </label>
                   <input type="submit" class="b" value="Искать" />
                 </form>
