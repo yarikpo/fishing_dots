@@ -12,10 +12,10 @@ export default class extends React.Component {
 
 
 
-  ComponentDidMount() {
+  componentDidMount() {
     fetch("http://dots-practice-2018.xeon.prostoksi.com/contests-json", {
       'credentials': 'include', 
-      headers: { 'Cookie': "DSID=WzETbgEkzCkXOX1H" }
+      //headers: { 'Cookie': "DSID=WzETbgEkzCkXOX1H" }
     })
       .then(data => data.json())
       .then(contests => this.setState({ contests: contests }))
@@ -31,7 +31,7 @@ export default class extends React.Component {
         name={contest.title}
         type={contest.type}
         date_of_start={contest.start_time}
-        teacher_name={contest.teacher_name}
+        //teacher_name={contest.teacher_name}
         going={contest.status}
         registered={contest.registration_type}
       />
@@ -76,14 +76,7 @@ export default class extends React.Component {
                 <a href="contests?sort=3">Ваш статус</a>
               </th>
             </tr>
-            <ContestInfo
-              name="Первый урок!"
-              type="Практика"
-              date_of_start="01.01.1970 12.00.00"
-              teacher_name="Никола Алексеевич"
-              going="Ожидание"
-              registered="Зарегистрирован"
-            />
+            {contestComponents}
           </tbody>
         </table>
         <div>
