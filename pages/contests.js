@@ -14,6 +14,7 @@ export default class extends React.Component {
 
   ComponentDidMount() {
     fetch("http://dots-practice-2018.xeon.prostoksi.com/contests-json", {
+      'credentials': 'include', 
       headers: { 'Cookie': "DSID=WzETbgEkzCkXOX1H" }
     })
       .then(data => data.json())
