@@ -64,7 +64,7 @@ class AuthenticatedUserNavigation extends React.Component {
 
         <li>&nbsp;</li>
         <li>
-          <a title="Выйти из системы" href="/logout">
+          <a title="Выйти из системы" href="/">
             Выйти
           </a>
         </li>

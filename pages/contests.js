@@ -31,9 +31,10 @@ export default class extends React.Component {
         name={contest.title}
         type={contest.type}
         date_of_start={contest.start_time}
-        //teacher_name={contest.teacher_name}
+        //teachername={contest.teacher_name}         
         going={contest.status}
         registered={contest.registration_type}
+        id={contest.id}
       />
     ))
     return (

@@ -6,7 +6,7 @@ export default class ContestInfo extends React.Component {
           <td />
           <td class="pt">
             <div>
-              <a href="/contests/details?id=1741">{this.props.name}</a>
+              <a href={`/contests/details?id=${this.props.id}`}>{this.props.name}</a>
             </div>
             <div class="s">
               <div>
