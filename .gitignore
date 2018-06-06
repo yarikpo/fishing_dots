@@ -60,7 +60,7 @@ typings/
 # next.js build output
 .next
  
- node_modules
- .vscode
- package-lock.json
- package.json
+node_modules
+.vscode 
+package-lock.json
+package.json
